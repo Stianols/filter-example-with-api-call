@@ -3,16 +3,14 @@ import { renderTeams } from "./ui/renderTeams.js";
 import { searchTeams } from "./ui/searchTeams.js";
 import { displayMessage } from "./ui/displayMessage.js";
 
-const url = "https://t9jt3myad3.execute-api.eu-west-2.amazonaws.com/api/nbateams";
+const url = "https://noroff.herokuapp.com/v1/nba-teams/teams";
 
 async function getTeams() {
     try {
         const response = await fetch(url);
-        const json = await response.json();
+        const teams = await response.json();
 
-        console.log(json.data);
-
-        const teams = json.data;
+        console.log(teams);
 
         renderTeams(teams);
         searchTeams(teams);
