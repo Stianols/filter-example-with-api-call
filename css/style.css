@@ -5,31 +5,49 @@
 body {
     font-family: sans-serif;
     margin: 0;
+    background: #f6e3fc;
+}
+
+.header-container {
+    width: 100% auto;
+    padding: 20px 5%;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 90%;
     margin: 20px auto;
 }
 
-.team-container {
+.product-container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.team {
+.product {
     margin: 1rem;
     padding: 1rem;
-    background: white;
-    border: 1px solid lightgrey;
-    border-radius: 1rem;
-    min-width: 200px;
+    background: #fff;
+    color: #000;
+    border-radius: 0.5rem;
+    min-width: 500px;
+    min-height: 200px;
     position: relative;
+    box-shadow: 0px 5px 20px -15px #111;
 }
 
 .search {
     margin-left: 1rem;
     padding: 0.5rem;
+}
+
+input:focus {
+    outline: 2px solid rgb(199, 144, 221);
+    box-shadow: 0px 4px 9px 0px #111;
+}
+
+input:hover {
+    outline: 2px solid rgb(199, 144, 221);
+    box-shadow: 0px 4px 9px 0px #111;
 }
 
 .message {
@@ -48,3 +66,40 @@ body {
     border-color: green;
     color: green;
 }
+
+/* Loading wheel credits to: https://loading.io/css/ */
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #111;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #111 transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

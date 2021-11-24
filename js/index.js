@@ -1,23 +1,20 @@
-import teams from "./data/teams.js";
-import { renderTeams } from "./ui/renderTeams.js";
-import { searchTeams } from "./ui/searchTeams.js";
+import { renderProducts } from "./ui/renderProducts.js";
+import { searchProducts } from "./ui/searchProducts.js";
 import { displayMessage } from "./ui/displayMessage.js";
 
-const url = "https://noroff.herokuapp.com/v1/nba-teams/teams";
+const url = "https://fakestoreapi.com/products";
 
-async function getTeams() {
+async function getProducts() {
     try {
         const response = await fetch(url);
-        const teams = await response.json();
+        const products = await response.json();
 
-        console.log(teams);
+        renderProducts(products);
+        searchProducts(products);
 
-        renderTeams(teams);
-        searchTeams(teams);
     } catch (error) {
-        console.log(error);
-        displayMessage("error", error, ".team-container");
+        displayMessage("error", error, ".product-container");
     }
 }
 
-getTeams();
+getProducts();
