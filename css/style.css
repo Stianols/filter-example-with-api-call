@@ -62,10 +62,6 @@ input:hover {
     color: red;
 }
 
-.message.success {
-    border-color: green;
-    color: green;
-}
 
 /* Loading wheel credits to: https://loading.io/css/ */
 .lds-ring {
